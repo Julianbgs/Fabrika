@@ -1,3 +1,3 @@
-export interface HeaderItem {
+export interface HeaderItemInterface {
     title: string
 }

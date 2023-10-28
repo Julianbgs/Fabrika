@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__elem {
+
+}
