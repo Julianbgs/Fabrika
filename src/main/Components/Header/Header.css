@@ -3,6 +3,10 @@
     padding: 12px 16px;
 }
 
+.header__nav {
+    display: flex;
+}
+
 .header__menu {
     display: flex;
     list-style: none;

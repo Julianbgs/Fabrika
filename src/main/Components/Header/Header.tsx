@@ -12,7 +12,7 @@ export default function Header () {
     ]
     return (
         <div className="header">
-            <nav>
+            <nav className="header__nav">
                 <Select options={options}/>
                 <ul className="header__menu">
                     <li className="header__elem">
