@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {SelectInterface, SelectOptionInterface} from "../../Core/interfaces/ui-elements";
 import arr from '../../../assets/images/ui/select/down-arrow.png';
 import './Select.css';
@@ -6,22 +6,35 @@ import './Select.css';
 export default function Select(props: SelectInterface) {
     const {options} = props;
 
+    const select = useRef<any>(null);
     const [isShowOptions, setIsShowOptions] = useState(false);
     const [activeOption, setActiveOption] = useState({
         address: 'Кордоный переулок 12',
         title: 'Анапа'
     });
 
+    const handleDocumentClick = (e: MouseEvent) => {
+        // Проверьте, был ли клик за пределами селекта
+        if (select.current && !select.current.contains(e.target as Node)) {
+            setIsShowOptions(false);
+        }
+    }
+
     const getActiveOption = useCallback((option: SelectOptionInterface) => {
         setActiveOption(option);
         setIsShowOptions(false);
     }, [])
-    // useEffect(() => {
-    //
-    // }, [isShowOptions])
+
+    useEffect(() => {
+        document.addEventListener('click', handleDocumentClick);
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+
+    }, [])
 
     return (
-        <div className="select">
+        <div className="select" ref={select} >
             <div className="select__top-elems">
                 <div className="select__title">{activeOption.title}</div>
                 <div className="select__address">{activeOption.address}</div>

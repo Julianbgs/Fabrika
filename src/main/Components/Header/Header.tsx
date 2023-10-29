@@ -21,6 +21,9 @@ export default function Header () {
                         </StyledLink>
                     </li>
                 </ul>
+                <div className="header__logo">
+                    <span>LOGO</span>
+                </div>
             </nav>
         </div>
     )
