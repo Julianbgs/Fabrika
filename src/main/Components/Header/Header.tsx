@@ -6,10 +6,14 @@ import StyledLink from "../../StyledComponents/Link/Link";
 import Select from "../../UI-elements/Select/Select";
 
 export default function Header () {
+    const options = [
+        {title: 'Анапа', address: 'Ленина 10'},
+        {title: 'Анапа', address: 'Кордонный переулок 12'}
+    ]
     return (
         <div className="header">
             <nav>
-                <Select title="Анапа" address="Кордоный переулок 12" options={[]}/>
+                <Select options={options}/>
                 <ul className="header__menu">
                     <li className="header__elem">
                         <StyledLink to={'/'} >

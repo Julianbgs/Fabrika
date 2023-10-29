@@ -3,8 +3,6 @@ export interface HeaderItemInterface {
 }
 
 export interface SelectInterface {
-    title: string;
-    address: string;
     options: SelectOptionInterface[];
 }
 

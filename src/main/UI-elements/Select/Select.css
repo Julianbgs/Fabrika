@@ -1,6 +1,19 @@
 .select {
+    position: relative;
     display: flex;
     align-items: center;
+}
+
+.select__option {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: #ffffff;
+
+
 }
 
 .select__title {
