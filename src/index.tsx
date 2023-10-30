@@ -6,6 +6,8 @@ import {createBrowserRouter} from "react-router-dom";
 import Main from "./main/Pages/Main/Main";
 import {RouterProvider} from "react-router";
 import ChooseAddress from "./main/Pages/ChooseAddress/ChooseRestaurant";
+import {Provider} from "react-redux";
+import store from "./main/store/store";
 
 const routes = createBrowserRouter([
     {
@@ -23,7 +25,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <RouterProvider router={routes} />
+    <Provider store={ store }>
+        <RouterProvider router={routes} />
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
