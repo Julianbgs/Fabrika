@@ -37,6 +37,7 @@ body, html {
     line-height: 17px;
     transition: all 1s;
     text-align: center;
+    cursor: pointer;
 }
 
 .choose__address:hover {
