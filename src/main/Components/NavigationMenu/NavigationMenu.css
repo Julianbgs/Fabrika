@@ -1,0 +1,20 @@
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #282c34;
+}
+
+.nav-menu__elem a {
+    text-decoration: none;
+    color: black;
+    font-family: Comfortaa, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.nav-menu__elem a:hover {
+    color: #61dafb;
+}

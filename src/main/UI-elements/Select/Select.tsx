@@ -47,8 +47,8 @@ export default function Select(props: SelectInterface) {
                 {options.map(option => {
                     return (
                         <div className="select__top-elems" onClick={() => getActiveOption(option)}>
-                            <div className="select__title">{option.title}</div>
-                            <div className="select__address">{option.address}</div>
+                            <div className="select__title select__title--opt">{option.title}</div>
+                            <div className="select__address select__address--opt">{option.address}</div>
                         </div>
                     )
                 })}

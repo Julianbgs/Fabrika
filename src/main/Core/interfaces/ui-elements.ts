@@ -1,5 +1,6 @@
 export interface HeaderItemInterface {
     title: string;
+    isHover?: boolean;
 }
 
 export interface SelectInterface {

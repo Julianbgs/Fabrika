@@ -2,8 +2,8 @@ import { HeaderItemInterface} from "../../Core/interfaces/ui-elements";
 import './HeaderItem.css';
 
 export default function HeaderItem(props: HeaderItemInterface) {
-    const {title} = props
+    const {title, isHover} = props
     return (
-        <span className="header-item">{title}</span>
+        <span className={`header-item ${isHover ? 'hover' : ''}`}>{title}</span>
     )
 }

@@ -10,6 +10,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    width: 160px;
     border-radius: 4px;
     background-color: #ffffff;
 
@@ -32,6 +33,16 @@
     font-size: 12px;
     line-height: 17px;
     text-align: center;
+}
+
+.select__title--opt {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.select__address--opt {
+    font-size: 10px;
+    font-weight: 400;
 }
 
 .select__dropdown {
