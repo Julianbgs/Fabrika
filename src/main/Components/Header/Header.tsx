@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import HeaderItem from "../../UI-elements/HeaderItem/HeaderItem";
-import './Header.css';
+import './Header.scss';
 import StyledLink from "../../StyledComponents/Link/Link";
 import Select from "../../UI-elements/Select/Select";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
