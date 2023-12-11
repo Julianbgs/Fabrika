@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 89px 140px;
+    margin-bottom: 31px;
 }
 
 .header__nav {
@@ -28,6 +29,32 @@
     justify-content: center;
     width: 200px;
     height: auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+.header__item {
+    display: inline-block;
+    margin-right: 94px;
+    color: #000000;
+    font-family: Nunito, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.header__item--no-margin {
+    margin-right: 0;
+}
+
+.header__cart {
+    margin-left: 56px;
+    width: 44px;
+    height: auto;
+    cursor: pointer;
 
     img {
         width: 100%;
