@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import {SelectInterface, SelectOptionInterface} from "../../Core/interfaces/ui-elements";
-import arr from '../../../assets/images/ui/select/down-arrow.png';
-import './Select.css';
+import arr from '../../../assets/images/ui/select/arr.svg';
+import './Select.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
 import {saveAddress} from "../../store/actions";
@@ -41,7 +41,6 @@ export default function Select(props: SelectInterface) {
     return (
         <div className="select" ref={select} >
             <div className="select__top-elems">
-                <div className="select__title">{title}</div>
                 <div className="select__address">{address}</div>
             </div>
             <div className="select__dropdown" onClick={() => setIsShowOptions(!isShowOptions)}>

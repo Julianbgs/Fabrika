@@ -11,12 +11,12 @@ export default function ChooseAddress() {
 
     const firstAddress = {
         title: 'Анапа',
-        address: 'Ленина 160'
+        address: 'Первомайская 39'
     };
 
     const secondAddress = {
         title: 'Анапа',
-        address: ' Кордоный переулок 12'
+        address: 'Кордоный переулок 1И'
     };
 
     const chooseAddress = (options: SelectOptionInterface) => {
@@ -30,12 +30,12 @@ export default function ChooseAddress() {
                 <div className="choose__address"
                      onClick={() => chooseAddress(firstAddress)}
                 >
-                    Анапа, Ленина 160
+                    Первомайская 39
                 </div>
                 <div className="choose__address"
                      onClick={() => chooseAddress(secondAddress)}
                 >
-                    Анапа, Кордоный переулок 12
+                    Кордоный переулок 1И
                 </div>
             </div>
         </div>

@@ -1,25 +1,18 @@
 .header {
     display: flex;
     flex-direction: column;
-    padding: 16px 18px;
+    padding: 89px 140px;
 }
 
 .header__nav {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
     margin-bottom: 8px;
 }
 
 .header__box {
     display: flex;
-    justify-content: space-between;
-    padding: 0 120px 0 0;
-    width: 45%;
-}
-
-.header__box--invert {
-    padding: 0 0 0 120px;
 }
 
 
@@ -33,5 +26,10 @@
 .header__logo {
     display: flex;
     justify-content: center;
-    width: 10%;
+    width: 200px;
+    height: auto;
+
+    img {
+        width: 100%;
+    }
 }

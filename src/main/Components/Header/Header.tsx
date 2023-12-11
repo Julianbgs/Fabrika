@@ -6,35 +6,44 @@ import StyledLink from "../../StyledComponents/Link/Link";
 import Select from "../../UI-elements/Select/Select";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
+import Logo from '../../../assets/images/header/Logo.svg';
+
 export default function Header () {
     const options = [
-        {title: 'Анапа', address: 'Ленина 10'},
-        {title: 'Анапа', address: 'Кордонный переулок 12'}
+        {title: 'Анапа', address: 'Первомайская 39'},
+        {title: 'Анапа', address: 'Кордонный переулок 1И'}
     ]
     return (
         <div className="header">
             <nav className="header__nav">
+                <div className="header__logo">
+                    <img src={Logo} alt="Logo site"/>
+                </div>
                 <div className="header__box">
                 <Select options={options}/>
                 <ul className="header__menu">
                     <li className="header__elem">
                         <StyledLink to={'/'} >
-                            <HeaderItem title={'Доставка и оплата'} />
+                            <HeaderItem title={'Меню'} />
+                        </StyledLink>
+                        <StyledLink to={'/'} >
+                            <HeaderItem title={'О нас'} />
+                        </StyledLink>
+                        <StyledLink to={'/'} >
+                            <HeaderItem title={'Контакты'} />
                         </StyledLink>
                     </li>
                 </ul>
                 </div>
-                <div className="header__logo">
-                    <span>LOGO</span>
-                </div>
-                <div className="header__box header__box--invert">
-                <div className="header__elem">
-                    <StyledLink to={'/'} >
-                        <HeaderItem title={'Контакты'} />
-                    </StyledLink>
-                </div>
-                <div>Корзина</div>
-                </div>
+
+                {/*<div className="header__box header__box--invert">*/}
+                {/*<div className="header__elem">*/}
+                {/*    <StyledLink to={'/'} >*/}
+                {/*        <HeaderItem title={'Контакты'} />*/}
+                {/*    </StyledLink>*/}
+                {/*</div>*/}
+                {/*<div>Корзина</div>*/}
+                {/*</div>*/}
             </nav>
             <NavigationMenu />
         </div>
