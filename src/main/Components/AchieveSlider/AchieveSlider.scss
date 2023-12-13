@@ -1,8 +1,12 @@
+.slider {
+  padding-bottom: 130px;
+}
+
 .slide {
   display: flex;
   align-items: center;
   width: 1035px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 
 .slide__body {
@@ -45,7 +49,11 @@
 }
 
 .slide__border-elem {
-  padding: 20px 18px 21px 3px;
+  width: 429px;
+  margin: 0 auto;
+  border: 1px solid #FFFFDE;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to top, #B48A39, #FFFFDE, #D5BE7F, #FFFBEF, #B48A39);
 }
 
 .slide__border-description {
@@ -73,7 +81,7 @@
 .slide__image {
   flex-shrink: 0;
   width: 343px;
-  height: 428px;
+  height: 408px;
   border-radius: 0 30px 30px 0;
 
   img {
