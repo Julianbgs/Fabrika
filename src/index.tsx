@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter} from "react-router-dom";
 import Main from "./main/Pages/Main/Main";
 import {RouterProvider} from "react-router";
-import ChooseAddress from "./main/Pages/ChooseAddress/ChooseRestaurant";
+import ChooseAddress from "./main/Components/ChooseAddressModal/ChooseRestaurant";
 import {Provider} from "react-redux";
 import store from "./main/store/store";
 
