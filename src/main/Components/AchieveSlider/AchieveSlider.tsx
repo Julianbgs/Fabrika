@@ -94,6 +94,24 @@ export function AchievmentSlider(props: any) {
                             <h3 className="slide__title">Общая информация!</h3>
                             <p className="slide__sub-title">Мы хотим, чтобы вы звонили нам!</p>
                             <p className="slide__description">Бронь столов осуществляется по номерам:</p>
+                            <div className="slide__numbers">
+                                <div className="slide__number-item">
+                                    <div className="slide__number-title">
+                                        Первомайская 39
+                                    </div>
+                                    <div className="slide__phone">
+                                        8 (928) 841-11-71
+                                    </div>
+                                </div>
+                                <div className="slide__number-item">
+                                    <div className="slide__number-title">
+                                        Переулок Кордонный 1И
+                                    </div>
+                                    <div className="slide__phone">
+                                        8 (938) 557-70-30
+                                    </div>
+                                </div>
+                            </div>
                             <div className="slide__border-elem">
                                 <p className="slide__border-description">Мы также заинтересованы в классных кадрах,
                                     поэтому будем рады любому сотрудничеству </p>

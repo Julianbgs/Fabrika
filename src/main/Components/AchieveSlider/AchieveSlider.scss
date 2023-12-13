@@ -136,6 +136,38 @@
   }
 }
 
+.slide__numbers {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 9px 0 32px 0;
+}
+
+.slide__number-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 394px;
+}
+
+.slide__number-title {
+  color: #B48A39;
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 36.558px */
+}
+
+.slide__phone {
+  color: #000000;
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 36.558px */
+}
 
 .slide__image {
   flex-shrink: 0;
