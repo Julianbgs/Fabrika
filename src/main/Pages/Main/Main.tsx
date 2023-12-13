@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
 import Modal from 'react-modal';
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
+import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
 
 const customStyles = {
@@ -73,6 +74,7 @@ export default function Main() {
                 <ChooseAddress closeModal={closeModal} />
             </Modal>
             <Header />
+            <AchievmentSlider />
         </>
     )
 }
