@@ -1,11 +1,13 @@
 import React from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
+import {Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 
 import slideFirst from '../../../assets/images/slider/slide1.png';
 import slideSecond from '../../../assets/images/slider/slide2.png';
 import slideThird from '../../../assets/images/slider/slide3.png';
 import slideFourth from '../../../assets/images/slider/slide4.png';
+import arrRight from '../../../assets/images/slider/arr-right.png';
+import arrLeft from '../../../assets/images/slider/arr-left.png';
 
 import './AchieveSlider.scss'
 import 'swiper/css';
@@ -16,14 +18,29 @@ export function AchievmentSlider(props: any) {
         <div className="slider">
             <Swiper
 
-                modules={[Pagination, Navigation, Scrollbar]}
-                navigation
+                modules={[Pagination, Navigation, EffectCoverflow]}
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    clickable: true,
+                }}
                 pagination={{clickable: true}}
-                scrollbar={{draggable: true}}
                 loop={true}
                 spaceBetween={50}
                 slidesPerView={1}
-                onSlideChange={() => console.log('slide change')}
+                coverflowEffect={
+                    {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 110,
+                        modifier: 7,
+                    }
+                }
+
+                className="swiper_container"
             >
                 <SwiperSlide>
                     <div className="slide">
@@ -122,6 +139,16 @@ export function AchievmentSlider(props: any) {
                         </div>
                     </div>
                 </SwiperSlide>
+
+                <div className="slider-controler">
+                    <div className="swiper-button-prev slider-arrow">
+                        <img src={arrLeft} alt="arr left"/>
+                    </div>
+                    <div className="swiper-button-next slider-arrow">
+                        <img src={arrRight} alt="arr right"/>
+                    </div>
+                    <div className="swiper-pagination" />
+                </div>
             </Swiper>
         </div>
     )
