@@ -7,6 +7,8 @@ import Modal from 'react-modal';
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
 import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
+import './Main.css';
+
 
 const customStyles = {
     content: {
@@ -62,7 +64,7 @@ export default function Main() {
     }
 
 
-    return(
+    return (
         <>
             <Modal
                 isOpen={modalIsOpen}
@@ -71,10 +73,12 @@ export default function Main() {
                 contentLabel="Choose Cafe"
                 style={customStyles}
             >
-                <ChooseAddress closeModal={closeModal} />
+                <ChooseAddress closeModal={closeModal}/>
             </Modal>
-            <Header />
-            <AchievmentSlider />
+            <div className="container">
+                <Header/>
+                <AchievmentSlider/>
+            </div>
         </>
     )
 }

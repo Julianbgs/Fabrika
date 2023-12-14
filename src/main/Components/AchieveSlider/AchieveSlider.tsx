@@ -35,7 +35,7 @@ export function AchievmentSlider(props: any) {
                     {
                         rotate: 0,
                         stretch: 0,
-                        depth: 110,
+                        depth: 100,
                         modifier: 7,
                     }
                 }
