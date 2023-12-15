@@ -15,41 +15,33 @@ export default function Header() {
         {title: 'Анапа', address: 'Кордонный переулок 1И'}
     ]
     return (
-        <div className="header">
-            <nav className="header__nav">
-                <div className="header__logo">
-                    <img src={Logo} alt="Logo site"/>
-                </div>
-                <div className="header__box">
-                    <Select options={options}/>
-                    <ul className="header__menu">
-                        <li className="header__elem">
-                            <StyledLink to={'/'}>
-                                <HeaderItem title={'Меню'}/>
-                            </StyledLink>
-                            <StyledLink to={'/'}>
-                                <HeaderItem title={'О нас'}/>
-                            </StyledLink>
-                            <StyledLink to={'/'}>
-                                <HeaderItem isLastItem={true} title={'Контакты'}/>
-                            </StyledLink>
-                        </li>
-                    </ul>
-                    <div className='header__cart'>
-                        <img src={Cart} alt="cart site"/>
+        <div className="container">
+            <div className="header">
+                <nav className="header__nav">
+                    <div className="header__logo">
+                        <img src={Logo} alt="Logo site"/>
                     </div>
-                </div>
-
-                {/*<div className="header__box header__box--invert">*/}
-                {/*<div className="header__elem">*/}
-                {/*    <StyledLink to={'/'} >*/}
-                {/*        <HeaderItem title={'Контакты'} />*/}
-                {/*    </StyledLink>*/}
-                {/*</div>*/}
-                {/*<div>Корзина</div>*/}
-                {/*</div>*/}
-            </nav>
-            {/*<NavigationMenu />*/}
+                    <div className="header__box">
+                        <Select options={options}/>
+                        <ul className="header__menu">
+                            <li className="header__elem">
+                                <StyledLink to={'/'}>
+                                    <HeaderItem title={'Меню'}/>
+                                </StyledLink>
+                                <StyledLink to={'/'}>
+                                    <HeaderItem title={'О нас'}/>
+                                </StyledLink>
+                                <StyledLink to={'/'}>
+                                    <HeaderItem isLastItem={true} title={'Контакты'}/>
+                                </StyledLink>
+                            </li>
+                        </ul>
+                        <div className='header__cart'>
+                            <img src={Cart} alt="cart site"/>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
     )
 }

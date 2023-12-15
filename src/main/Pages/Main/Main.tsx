@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
 import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
-import './Main.css';
+import './Main.scss';
 
 
 const customStyles = {
@@ -75,10 +75,8 @@ export default function Main() {
             >
                 <ChooseAddress closeModal={closeModal}/>
             </Modal>
-            <div className="container">
-                <Header/>
-                <AchievmentSlider/>
-            </div>
+            <Header/>
+            <AchievmentSlider/>
         </>
     )
 }
