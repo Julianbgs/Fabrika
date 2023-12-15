@@ -1,5 +1,5 @@
 import React from "react";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import {Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
 import {Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 
 import slideFirst from '../../../assets/images/slider/slide1.png';
@@ -12,8 +12,18 @@ import arrLeft from '../../../assets/images/slider/arr-left.png';
 import './AchieveSlider.scss'
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
+
 
 export function AchievmentSlider(props: any) {
+    const swiper = useSwiper();
+    const swiperSlide = useSwiper();
+
+    const slides = Array.from({ length: 4 }).map(
+        (el, index) => `Slide ${index + 1}`
+    );
+
     return (
         <div className="slider">
             <Swiper
@@ -28,13 +38,12 @@ export function AchievmentSlider(props: any) {
                     clickable: true,
                 }}
                 pagination={{clickable: true}}
-                loop={true}
                 spaceBetween={50}
                 slidesPerView={1}
                 coverflowEffect={
                     {
                         rotate: 0,
-                        stretch: 0,
+                        stretch: 2,
                         depth: 100,
                         modifier: 7,
                     }
@@ -141,7 +150,7 @@ export function AchievmentSlider(props: any) {
                 </SwiperSlide>
 
                 <div className="slider-controler">
-                    <div className="swiper-button-prev slider-arrow">
+                     <div className="swiper-button-prev slider-arrow">
                         <img src={arrLeft} alt="arr left"/>
                     </div>
                     <div className="swiper-button-next slider-arrow">
