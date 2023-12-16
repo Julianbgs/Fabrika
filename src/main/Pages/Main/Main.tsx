@@ -8,6 +8,7 @@ import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant"
 import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
 import './Main.scss';
+import Footer from "../../Components/Footer/Footer";
 
 
 const customStyles = {
@@ -77,6 +78,7 @@ export default function Main() {
             </Modal>
             <Header/>
             <AchievmentSlider/>
+            <Footer />
         </>
     )
 }
