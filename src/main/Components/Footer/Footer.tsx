@@ -37,7 +37,7 @@ export default function Footer() {
                             </StyledLink>
                         </li>
                         <li className="footer__elem">
-                            <StyledLink to={'/'}>
+                            <StyledLink to={'/about-us'}>
                                 <HeaderItem title={'О нас'}/>
                             </StyledLink>
                         </li>

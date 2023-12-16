@@ -18,9 +18,6 @@ export default function Header() {
         <div className="container">
             <div className="header">
                 <nav className="header__nav">
-                    <div className="header__logo">
-                        <img src={Logo} alt="Logo site"/>
-                    </div>
                     <div className="header__box">
                         <Select options={options}/>
                         <ul className="header__menu">
@@ -28,6 +25,15 @@ export default function Header() {
                                 <StyledLink to={'/'}>
                                     <HeaderItem title={'Меню'}/>
                                 </StyledLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="header__logo">
+                        <img src={Logo} alt="Logo site"/>
+                    </div>
+                    <div className="header__box">
+                        <ul className="header__menu">
+                            <li className="header__elem">
                                 <StyledLink to={'/about-us'}>
                                     <HeaderItem title={'О нас'}/>
                                 </StyledLink>
