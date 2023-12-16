@@ -37,7 +37,7 @@ export default function AboutUs() {
                 <p className="price__border-description">После 16:00
                     <span className="price__thin"> – 300 рублей с человека</span>
                 </p>
-                <p className="price__border-description small">Детям до 7 лет вход бесплатный </p>
+                <p className="price__border-description small-about">Детям до 7 лет вход бесплатный </p>
             </div>
             <div className="difference">
                 <h3 className="difference__title">Из особенностей нашей сети:</h3>
