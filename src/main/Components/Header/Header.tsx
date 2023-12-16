@@ -28,7 +28,7 @@ export default function Header() {
                                 <StyledLink to={'/'}>
                                     <HeaderItem title={'Меню'}/>
                                 </StyledLink>
-                                <StyledLink to={'/'}>
+                                <StyledLink to={'/about-us'}>
                                     <HeaderItem title={'О нас'}/>
                                 </StyledLink>
                                 <StyledLink to={'/'}>

@@ -1,5 +1,5 @@
 .footer {
-  padding: 70px 140px 36px 126px;
+  padding: 70px 140px 36px 140px;
   box-sizing: border-box;
   background: #333237;
 }
@@ -12,8 +12,7 @@
 .footer__menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-right: 230px;
+  align-items: center;
   list-style: none;
 }
 
@@ -22,13 +21,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 92px;
 }
 
 .footer__logo {
-  width: 342px;
-  height: 177px;
-  margin-bottom: 54px;
+  width: 170px;
+  height: 88px;
+  margin-bottom: 12px;
 
   img {
     width: 100%;
@@ -42,10 +40,10 @@
 }
 
 .footer__icon {
-  width: 37px;
-  height: 37px;
+  width: 29px;
+  height: 29px;
   border-radius: 50%;
-  margin-right: 32px;
+  margin-right: 12px;
 
   &:last-child {
     margin-right: 0;
@@ -73,7 +71,7 @@
 .footer__title {
   color: #ffffff;
   font-family: Nunito, sans-serif;
-  font-size: 17.833px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 36px;
@@ -82,7 +80,7 @@
 .footer__number {
   color: #ffffff;
   font-family: Nunito, sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 74px;
@@ -91,9 +89,9 @@
 .footer__elem a div {
   color: #ffffff;
   font-family: Nunito, sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }

@@ -4,7 +4,7 @@ import StyledLink from "../../StyledComponents/Link/Link";
 
 import './Footer.scss';
 
-import logo from '../../../assets/images/footer/logo-footer.svg';
+import logo from '../../../assets/images/footer/logo.svg';
 import tg from '../../../assets/images/footer/tg.svg';
 import vk from '../../../assets/images/footer/vk.svg';
 import whatsApp from '../../../assets/images/footer/wapp.svg';
@@ -14,6 +14,22 @@ export default function Footer() {
         <footer className="footer">
             <div className="container">
                 <div className="footer__flex">
+                    <div className="footer__assets">
+                        <div className="footer__logo">
+                            <img src={logo} alt="footer logo"/>
+                        </div>
+                        <div className="footer__social">
+                            <div className="footer__icon">
+                                <img src={tg} alt="telegram icon"/>
+                            </div>
+                            <div className="footer__icon">
+                                <img src={whatsApp} alt="whatsApp icon"/>
+                            </div>
+                            <div className="footer__icon">
+                                <img src={vk} alt="vk icon"/>
+                            </div>
+                        </div>
+                    </div>
                     <ul className="footer__menu">
                         <li className="footer__elem">
                             <StyledLink to={'/'}>
@@ -31,22 +47,6 @@ export default function Footer() {
                             </StyledLink>
                         </li>
                     </ul>
-                    <div className="footer__assets">
-                        <div className="footer__logo">
-                            <img src={logo} alt="footer logo"/>
-                        </div>
-                        <div className="footer__social">
-                            <div className="footer__icon">
-                                <img src={tg} alt="telegram icon"/>
-                            </div>
-                            <div className="footer__icon">
-                                <img src={whatsApp} alt="whatsApp icon"/>
-                            </div>
-                            <div className="footer__icon">
-                                <img src={vk} alt="vk icon"/>
-                            </div>
-                        </div>
-                    </div>
                     <div className="footer__contacts">
                         <div className="footer__contact">
                             <div className="footer__title">

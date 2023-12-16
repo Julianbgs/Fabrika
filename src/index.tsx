@@ -8,6 +8,7 @@ import {RouterProvider} from "react-router";
 import ChooseAddress from "./main/Components/ChooseAddressModal/ChooseRestaurant";
 import {Provider} from "react-redux";
 import store from "./main/store/store";
+import About from "./main/Pages/About/About";
 
 const routes = createBrowserRouter([
     {
@@ -15,8 +16,8 @@ const routes = createBrowserRouter([
         element: <Main/>
     },
     {
-        path: '/choose-restaurant',
-        element: <ChooseAddress/>
+        path: '/about-us',
+        element: <About/>
     }
 ])
 
