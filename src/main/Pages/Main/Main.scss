@@ -1,0 +1,20 @@
+.delivery {
+  position: fixed;
+  left: 0;
+  transform: rotate(-90deg);
+  top: 600px;
+  z-index: 20;
+  transform-origin: top left;
+  padding: 20px 32px;
+  color: #EADBBE;
+  border-radius: 0px 0px 32px 32px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 7.131px 17.113px 0px rgba(0, 0, 0, 0.13), 0px 31.374px 31.374px 0px rgba(0, 0, 0, 0.12), 0px 69.879px 42.783px 0px rgba(0, 0, 0, 0.07), 0px 125.497px 49.914px 0px rgba(0, 0, 0, 0.02), 0px 195.377px 54.192px 0px rgba(0, 0, 0, 0.00);
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}

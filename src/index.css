@@ -20,3 +20,7 @@ code {
   width: 100%;
   margin: 0 auto;
 }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}

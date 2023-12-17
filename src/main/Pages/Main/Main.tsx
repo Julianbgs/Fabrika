@@ -9,6 +9,7 @@ import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
 import './Main.scss';
 import Footer from "../../Components/Footer/Footer";
+import DeliveryModal from "../../DeliveryModal/DeliveryModal";
 
 
 const customStyles = {
@@ -21,6 +22,22 @@ const customStyles = {
         border: 'none',
         transform: 'translate(-50%, -50%)',
         width: '715px',
+        height: '490px',
+        background: 'transparent'
+    },
+};
+
+
+const customStylesD = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '1035px',
         height: '490px',
         background: 'transparent'
     },
@@ -50,10 +67,16 @@ export default function Main() {
     }, []);
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpenD, setIsOpenD] = React.useState(false);
 
     function openModal() {
         setIsOpen(true);
     }
+
+    function openModalD() {
+        setIsOpenD(true);
+    }
+
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
@@ -64,12 +87,26 @@ export default function Main() {
         setIsOpen(false);
     }
 
+    function closeModalD() {
+        setIsOpenD(false);
+    }
+
 
     return (
         <>
             <Modal
+                isOpen={modalIsOpenD}
+                onRequestClose={closeModalD}
+                contentLabel="Choose Cafe"
+                style={customStylesD}
+            >
+                <DeliveryModal closeModal={closeModal}/>
+            </Modal>
+            <div className="delivery" onClick={() => openModalD()}>
+                Доставка
+            </div>
+            <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 contentLabel="Choose Cafe"
                 style={customStyles}
