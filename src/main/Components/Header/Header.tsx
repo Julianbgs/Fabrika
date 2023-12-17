@@ -37,7 +37,7 @@ export default function Header() {
                                 <StyledLink to={'/about-us'}>
                                     <HeaderItem title={'О нас'}/>
                                 </StyledLink>
-                                <StyledLink to={'/'}>
+                                <StyledLink to={'/contacts'}>
                                     <HeaderItem isLastItem={true} title={'Контакты'}/>
                                 </StyledLink>
                             </li>

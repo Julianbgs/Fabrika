@@ -42,7 +42,7 @@ export default function Footer() {
                             </StyledLink>
                         </li>
                         <li className="footer__elem">
-                            <StyledLink to={'/'}>
+                            <StyledLink to={'/contacts'}>
                                 <HeaderItem title={'Контакты'}/>
                             </StyledLink>
                         </li>

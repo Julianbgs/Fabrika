@@ -5,9 +5,9 @@ import {InitialStoreInterface} from "../../Core/interfaces/store";
 import Modal from 'react-modal';
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
 
-import './About.scss';
+import './Contacts.scss';
 import Footer from "../../Components/Footer/Footer";
-import AboutUs from "../../Components/About-us/About-us";
+import Contacts from "../../Components/Contacts/Contacts";
 
 
 const customStyles = {
@@ -25,7 +25,7 @@ const customStyles = {
     },
 };
 
-export default function About() {
+export default function ContactsPage() {
     const initial: InitialStoreInterface[] = useSelector((state: any) => state);
     const address = initial[0] ? initial[0].address : null;
     useEffect(() => {
@@ -76,7 +76,7 @@ export default function About() {
             </Modal>
             <Header/>
             <div className="container-small">
-                <AboutUs />
+                <Contacts />
             </div>
             <Footer />
         </>

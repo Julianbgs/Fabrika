@@ -5,10 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter} from "react-router-dom";
 import Main from "./main/Pages/Main/Main";
 import {RouterProvider} from "react-router";
-import ChooseAddress from "./main/Components/ChooseAddressModal/ChooseRestaurant";
 import {Provider} from "react-redux";
 import store from "./main/store/store";
 import About from "./main/Pages/About/About";
+import ContactsPage from "./main/Pages/Contacts/Contacts";
 
 const routes = createBrowserRouter([
     {
@@ -18,6 +18,10 @@ const routes = createBrowserRouter([
     {
         path: '/about-us',
         element: <About/>
+    },
+    {
+        path: '/contacts',
+        element: <ContactsPage/>
     }
 ])
 
