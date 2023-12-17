@@ -8,11 +8,36 @@ import logo from '../../../assets/images/footer/logo.svg';
 import tg from '../../../assets/images/footer/tg.svg';
 import vk from '../../../assets/images/footer/vk.svg';
 import whatsApp from '../../../assets/images/footer/wapp.svg';
+import {useMediaQuery} from "react-responsive";
 
 export default function Footer() {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 786px)"
+    });
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1200px)"
+    });
     return (
         <footer className="footer">
-            <div className="container">
+            {isMobile && <div className="flex">
+                <StyledLink to={'/contacts'}>
+                    <button className="footer__btn">
+                        Контакты
+                    </button>
+                </StyledLink>
+                <StyledLink to={'/'}>
+                    <button className="footer__btn white">
+                        Меню
+                    </button>
+                </StyledLink>
+                <StyledLink to={'/'}>
+                    <button className="footer__btn mr-0">
+                        Корзина
+                    </button>
+                </StyledLink>
+
+            </div>}
+            {isDesktop && <div className="container">
                 <div className="footer__flex">
                     <div className="footer__assets">
                         <div className="footer__logo">
@@ -66,7 +91,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
         </footer>
     )
 }
