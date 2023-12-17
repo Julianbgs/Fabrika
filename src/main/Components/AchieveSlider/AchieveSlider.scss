@@ -4,8 +4,8 @@
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding-bottom: 100px;
+    padding-top: 80px;
   }
 }
 
@@ -265,7 +265,7 @@
 
 .slider-controler .swiper-button-next {
   position: absolute;
-  top: -280px!important;
+  top: -240px!important;
   right: 125px;
 }
 
@@ -288,7 +288,7 @@
 
 .slider-controler .swiper-button-prev {
   position: absolute;
-  top: -280px!important;
+  top: -240px!important;
   left: 125px;
 }
 

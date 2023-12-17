@@ -4,8 +4,15 @@ import map from '../../../assets/images/contacts/map.png';
 import mapDelivery from '../../../assets/images/contacts/map-delivery.png';
 
 import './Contacts.scss';
+import {useMediaQuery} from "react-responsive";
 
 export default function Contacts() {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 786px)"
+    });
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1200px)"
+    });
     return (
         <section className="contacts">
             <div className="contacts__main">
@@ -60,6 +67,9 @@ export default function Contacts() {
                     </div>
                 </div>
                 <div className="contacts__map">
+                    {isMobile && <div className="contacts__image-delivery">
+                        <img src={mapDelivery} alt="image map"/>
+                    </div>}
                     <div className="contacts__map-boxes left">
                         <h3 className="contacts__title-delivery">Доставка!</h3>
                         <p className="contacts__sub-title">«Фабрика» рада, что вы выбираете нашу доставку!</p>
@@ -80,9 +90,9 @@ export default function Contacts() {
 
                         </div>
                     </div>
-                    <div className="contacts__image-delivery">
+                    {isDesktop && <div className="contacts__image-delivery">
                         <img src={mapDelivery} alt="image map"/>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </section>

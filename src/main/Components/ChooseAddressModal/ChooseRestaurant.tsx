@@ -57,7 +57,6 @@ export default function ChooseAddress(props: any) {
                     Кордоный переулок 1И
                 </div>
             </div>
-            <button onClick={handleCloseModal}>Закрыть модальное окно</button>
         </div>
     )
 }

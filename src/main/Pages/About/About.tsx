@@ -8,6 +8,10 @@ import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant"
 import './About.scss';
 import Footer from "../../Components/Footer/Footer";
 import AboutUs from "../../Components/About-us/About-us";
+import {useMediaQuery} from "react-responsive";
+import DeliveryModal from "../../DeliveryModal/DeliveryModal";
+
+
 
 
 const customStyles = {
@@ -25,7 +29,59 @@ const customStyles = {
     },
 };
 
+
+const customStylesMobile = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '279px',
+        height: '490px',
+        background: 'transparent'
+    },
+};
+
+
+const customStylesD = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '1035px',
+        height: '490px',
+        background: 'transparent'
+    },
+};
+
+const customStylesMobileD = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '490px',
+        background: 'transparent'
+    },
+}
 export default function About() {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 786px)"
+    });
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1200px)"
+    });
     const initial: InitialStoreInterface[] = useSelector((state: any) => state);
     const address = initial[0] ? initial[0].address : null;
     useEffect(() => {
@@ -45,13 +101,19 @@ export default function About() {
         //     // Remove the event listener when component unmounts
         //     return () => window.removeEventListener('load', onPageLoad);
         // }
-    }, [address]);
+    }, []);
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpenD, setIsOpenD] = React.useState(false);
 
     function openModal() {
         setIsOpen(true);
     }
+
+    function openModalD() {
+        setIsOpenD(true);
+    }
+
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
@@ -62,18 +124,50 @@ export default function About() {
         setIsOpen(false);
     }
 
-
+    function closeModalD() {
+        setIsOpenD(false);
+    }
     return (
         <>
-            <Modal
+            {isMobile && <Modal
+                isOpen={modalIsOpenD}
+                onRequestClose={closeModalD}
+                contentLabel="Choose Cafe"
+                style={customStylesD}
+            >
+                <DeliveryModal closeModal={closeModal}/>
+            </Modal>
+            }
+            {isDesktop && <Modal
+                isOpen={modalIsOpenD}
+                onRequestClose={closeModalD}
+                contentLabel="Choose Cafe"
+                style={customStylesMobileD}
+            >
+                <DeliveryModal closeModal={closeModal}/>
+            </Modal>
+            }
+            { isDesktop && <div className="delivery" onClick={() => openModalD()}>
+                Доставка
+            </div>}
+            {isMobile && <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                contentLabel="Choose Cafe"
+                style={customStylesMobile}
+            >
+                <ChooseAddress closeModal={closeModal}/>
+            </Modal>
+            }
+            {isDesktop && <Modal
+                isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Choose Cafe"
                 style={customStyles}
             >
-                {modalIsOpen && <ChooseAddress closeModal={closeModal} />}
+                <ChooseAddress closeModal={closeModal}/>
             </Modal>
+            }
             <Header/>
             <div className="container-small">
                 <AboutUs />

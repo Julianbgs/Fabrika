@@ -125,9 +125,6 @@ export default function Main() {
     function closeModalD() {
         setIsOpenD(false);
     }
-
-    console.log(isMobile);
-    console.log(isDesktop);
     return (
         <>
             {isMobile && <Modal
