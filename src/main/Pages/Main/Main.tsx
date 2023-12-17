@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import Header from "../../Components/Header/Header";
-import {useNavigate} from "react-router";
 import {useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
 import Modal from 'react-modal';
@@ -10,7 +9,7 @@ import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 import './Main.scss';
 import Footer from "../../Components/Footer/Footer";
 import DeliveryModal from "../../DeliveryModal/DeliveryModal";
-
+import {useMediaQuery} from "react-responsive";
 
 const customStyles = {
     content: {
@@ -22,6 +21,22 @@ const customStyles = {
         border: 'none',
         transform: 'translate(-50%, -50%)',
         width: '715px',
+        height: '490px',
+        background: 'transparent'
+    },
+};
+
+
+const customStylesMobile = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '279px',
         height: '490px',
         background: 'transparent'
     },
@@ -43,8 +58,28 @@ const customStylesD = {
     },
 };
 
+const customStylesMobileD = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        border: 'none',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '490px',
+        background: 'transparent'
+    },
+};
+
 export default function Main() {
-    const navigate = useNavigate();
+    const isMobile = useMediaQuery({
+        query: "(max-width: 786px)"
+    });
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1200px)"
+    });
     const initial: InitialStoreInterface[] = useSelector((state: any) => state);
     const address = initial[0] ? initial[0].address : null;
     useEffect(() => {
@@ -91,10 +126,11 @@ export default function Main() {
         setIsOpenD(false);
     }
 
-
+    console.log(isMobile);
+    console.log(isDesktop);
     return (
         <>
-            <Modal
+            {isMobile && <Modal
                 isOpen={modalIsOpenD}
                 onRequestClose={closeModalD}
                 contentLabel="Choose Cafe"
@@ -102,10 +138,29 @@ export default function Main() {
             >
                 <DeliveryModal closeModal={closeModal}/>
             </Modal>
-            <div className="delivery" onClick={() => openModalD()}>
+            }
+            {isDesktop && <Modal
+                isOpen={modalIsOpenD}
+                onRequestClose={closeModalD}
+                contentLabel="Choose Cafe"
+                style={customStylesMobileD}
+            >
+                <DeliveryModal closeModal={closeModal}/>
+            </Modal>
+            }
+            { isDesktop && <div className="delivery" onClick={() => openModalD()}>
                 Доставка
-            </div>
-            <Modal
+            </div>}
+            {isMobile && <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Choose Cafe"
+                style={customStylesMobile}
+            >
+                <ChooseAddress closeModal={closeModal}/>
+            </Modal>
+            }
+            {isDesktop && <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 contentLabel="Choose Cafe"
@@ -113,6 +168,7 @@ export default function Main() {
             >
                 <ChooseAddress closeModal={closeModal}/>
             </Modal>
+            }
             <Header/>
             <AchievmentSlider/>
             <Footer />

@@ -14,16 +14,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
+import {useMediaQuery} from "react-responsive";
 
 
 export function AchievmentSlider(props: any) {
-    const swiper = useSwiper();
-    const swiperSlide = useSwiper();
-
-    const slides = Array.from({ length: 4 }).map(
-        (el, index) => `Slide ${index + 1}`
-    );
-
+    const isMobile = useMediaQuery({
+        query: "(max-width: 786px)"
+    });
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1200px)"
+    });
     return (
         <div className="slider">
             <Swiper
@@ -43,9 +43,9 @@ export function AchievmentSlider(props: any) {
                 coverflowEffect={
                     {
                         rotate: 0,
-                        stretch: 2,
-                        depth: 100,
-                        modifier: 7,
+                        stretch: 0,
+                        depth:  isMobile ? 100 : 0,
+                        modifier: isMobile ? 7 : 0,
                     }
                 }
 
@@ -61,6 +61,9 @@ export function AchievmentSlider(props: any) {
                                 <br/>с английского «честная цена» - система, в которой гости платят за вход, а все блюда
                                 и напитки из меню предлагаются по себестоимости.
                             </p>
+                            {isMobile && <div className="slide__image">
+                                <img src={slideFirst} alt="first slider"/>
+                            </div>}
                             <div className="slide__border-elem">
                                 <p className="slide__border-description">Стоимость входа в наше заведение
                                     фиксированная: </p>
@@ -73,9 +76,9 @@ export function AchievmentSlider(props: any) {
                                 <p className="slide__border-description small">Детям до 7 лет вход бесплатный </p>
                             </div>
                         </div>
-                        <div className="slide__image">
+                        { isDesktop && <div className="slide__image">
                             <img src={slideFirst} alt="first slider"/>
-                        </div>
+                        </div>}
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -86,6 +89,9 @@ export function AchievmentSlider(props: any) {
                             <p className="slide__description">Хотим сразу рассказать о тарифах по доставке, так как
                                 блюда мы отдаем по честной цене, нам придется включить стоимость за доставку:
                             </p>
+                            {isMobile && <div className="slide__image">
+                                <img src={slideSecond} alt="first slider"/>
+                            </div>}
                             <div className="slide__delivery">
                                 <p className="slide__delivery-item">Анапа – 150 рублей </p>
                                 <p className="slide__delivery-item slide__delivery-item--red">Витязево – 350 рублей</p>
@@ -95,9 +101,9 @@ export function AchievmentSlider(props: any) {
                                 </p>
                             </div>
                         </div>
-                        <div className="slide__image">
+                        { isDesktop && <div className="slide__image">
                             <img src={slideSecond} alt="first slider"/>
-                        </div>
+                        </div>}
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -108,10 +114,13 @@ export function AchievmentSlider(props: any) {
                             <p className="slide__description">Заказывая блюда на доставку убедитесь, что аллергены, присутствующие в составе отсутствуют, либо пропишите в комментариях к заказу. Вам обязательно прозвонит менеджер и уточнит все ваши пожелания
 
                             </p>
+                            {isMobile && <div className="slide__image">
+                                <img src={slideThird} alt="first slider"/>
+                            </div>}
                         </div>
-                        <div className="slide__image">
+                        { isDesktop && <div className="slide__image">
                             <img src={slideThird} alt="first slider"/>
-                        </div>
+                        </div>}
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -138,14 +147,17 @@ export function AchievmentSlider(props: any) {
                                     </div>
                                 </div>
                             </div>
+                            {isMobile && <div className="slide__image">
+                                <img src={slideFourth} alt="first slider"/>
+                            </div>}
                             <div className="slide__border-elem">
                                 <p className="slide__border-description">Мы также заинтересованы в классных кадрах,
                                     поэтому будем рады любому сотрудничеству </p>
                             </div>
                         </div>
-                        <div className="slide__image">
+                        { isDesktop && <div className="slide__image">
                             <img src={slideFourth} alt="first slider"/>
-                        </div>
+                        </div>}
                     </div>
                 </SwiperSlide>
 

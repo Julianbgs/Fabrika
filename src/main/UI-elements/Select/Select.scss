@@ -5,6 +5,11 @@
     text-align: center;
     box-sizing: border-box;
     width: 210px;
+
+    @media (max-width: 768px) {
+        margin-top: 12px;
+        margin-left: 30px;
+    }
 }
 
 .select__option {
