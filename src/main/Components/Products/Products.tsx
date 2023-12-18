@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, {useState, useRef, useEffect} from "react";
 import './Products.scss';
 import { InitialStoreInterface } from "../../Core/interfaces/store";
 import {useDispatch, useSelector} from "react-redux";
@@ -12,8 +12,12 @@ export default function Products() {
     const dispatch = useDispatch();
     const state: InitialStoreInterface = useSelector((state: any) => state);
 
+    useEffect(() => {
+        chooseProduct(1)
+    },[])
+
     function chooseProduct(categoryId: number) {
-        axios(`${apiDev}api/product?restaurantId=${state.id}&categoryId=${categoryId}`).then(res => {
+        axios(`${apiDev}api/product?restaurantId=${state.id ? state.id : 1}&categoryId=${categoryId}`).then(res => {
             dispatch(saveProducts(res.data));
         })
     }
