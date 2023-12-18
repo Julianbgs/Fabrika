@@ -4,15 +4,17 @@ import arr from '../../../assets/images/ui/select/arr.svg';
 import './Select.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
-import {saveAddress} from "../../store/actions";
+import {saveAddress, saveCategories} from "../../store/actions";
+import axios from "axios";
+import {apiDev} from "../../Core/environment/api";
 
 export default function Select(props: SelectInterface) {
     const {options} = props;
     const dispatch = useDispatch();
 
-    const initialOptions: InitialStoreInterface[] = useSelector((state: any) => state);
-    const address = initialOptions[0] ? initialOptions[0].address : null;
-    const title = initialOptions[0] ? initialOptions[0].title : null;
+    const initialOptions: InitialStoreInterface = useSelector((state: any) => state);
+    const address = initialOptions ? initialOptions.address : null;
+    const title = initialOptions ? initialOptions.title : null;
 
     const select = useRef<any>(null);
     const [isShowOptions, setIsShowOptions] = useState(false);
@@ -25,7 +27,10 @@ export default function Select(props: SelectInterface) {
         }
     }
 
-    const getActiveOption = useCallback((option: SelectOptionInterface) => {
+    const getActiveOption = useCallback((option: SelectOptionInterface, id: number) => {
+        axios(`${apiDev}api/category?restaurantId=${id}`).then(res => {
+            dispatch(saveCategories(res.data));
+        })
         dispatch(saveAddress(option.title, option.address));
         setIsShowOptions(false);
     }, [])
@@ -48,9 +53,9 @@ export default function Select(props: SelectInterface) {
             </div>
             {isShowOptions &&
             <div className="select__option">
-                {options.map(option => {
+                {options.map((option, index) => {
                     return (
-                        <div className="select__top-elems" onClick={() => getActiveOption(option)}>
+                        <div className="select__top-elems" onClick={() => getActiveOption(option, index + 1)}>
                             <div className="select__address select__address--opt">{option.address}</div>
                         </div>
                     )

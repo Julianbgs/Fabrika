@@ -1,16 +1,28 @@
 import * as actions from './actionTypes';
 import {ActionWithPayload, InitialStoreInterface} from "../Core/interfaces/store";
+import {Reducer} from "redux";
 
-const initialStore: InitialStoreInterface[] = [];
+const initialStore: any = {};
 
 export default function reducer(state = initialStore, action: ActionWithPayload<InitialStoreInterface>) {
-  switch (action.type) {
-    case actions.SAVE_ADDRESS:
-      return [{
-        title: action.payload.title,
-        address: action.payload.address,
-      }];
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case actions.SAVE_ADDRESS:
+            return {
+                ...state,
+                title: action.payload.title,
+                address: action.payload.address,
+            };
+        case actions.RESTAURANT_ID:
+            return {
+                ...state,
+                id: action.payload.id,
+            };
+        case actions.CATEGORIES:
+            return {
+                ...state,
+                categories: action.payload.categories,
+            };
+        default:
+            return state;
+    }
 }

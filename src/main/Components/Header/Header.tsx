@@ -12,8 +12,8 @@ import {useMediaQuery} from "react-responsive";
 
 export default function Header() {
     const options = [
+        {title: 'Анапа', address: 'Кордонный переулок 1И'},
         {title: 'Анапа', address: 'Первомайская 39'},
-        {title: 'Анапа', address: 'Кордонный переулок 1И'}
     ]
     const isMobile = useMediaQuery({
         query: "(max-width: 786px)"

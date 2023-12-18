@@ -10,6 +10,7 @@ import './Main.scss';
 import Footer from "../../Components/Footer/Footer";
 import DeliveryModal from "../../DeliveryModal/DeliveryModal";
 import {useMediaQuery} from "react-responsive";
+import Products from "../../Components/Products/Products";
 
 const customStyles = {
     content: {
@@ -80,8 +81,8 @@ export default function Main() {
     const isDesktop = useMediaQuery({
         query: "(min-width: 1200px)"
     });
-    const initial: InitialStoreInterface[] = useSelector((state: any) => state);
-    const address = initial[0] ? initial[0].address : null;
+    const initial: InitialStoreInterface = useSelector((state: any) => state);
+    const address = initial ? initial.address : null;
     useEffect(() => {
         // callback function to call when event triggers
         if (!address) {
@@ -168,6 +169,9 @@ export default function Main() {
             }
             <Header/>
             <AchievmentSlider/>
+            <div className="container-small">
+            <Products />
+            </div>
             <Footer />
         </>
     )

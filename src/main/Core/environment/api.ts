@@ -1,0 +1,1 @@
+export const apiDev = 'https://api.dev.fabrika-rest.ru/';

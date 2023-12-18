@@ -80,8 +80,8 @@ export default function ContactsPage() {
     const isDesktop = useMediaQuery({
         query: "(min-width: 1200px)"
     });
-    const initial: InitialStoreInterface[] = useSelector((state: any) => state);
-    const address = initial[0] ? initial[0].address : null;
+    const initial: InitialStoreInterface = useSelector((state: any) => state);
+    const address = initial ? initial.address : null;
     useEffect(() => {
         // callback function to call when event triggers
         if (!address) {
