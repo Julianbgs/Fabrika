@@ -8,7 +8,7 @@
   left: 0;
   content: '';
   height: 50px;
-  width: 100px;
+  width: 20px;
   background: linear-gradient(-270deg, #D9D9D9 0.06%, rgba(217, 217, 217, 0.00) 24.76%);
 }
 
@@ -18,7 +18,7 @@
   right: 0;
   content: '';
   height: 50px;
-  width: 100px;
+  width: 20px;
   background: linear-gradient(270deg, #D9D9D9 0.06%, rgba(217, 217, 217, 0.00) 24.76%);
 }
 
@@ -69,5 +69,85 @@
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.products__main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 30%;
+  margin-right: 50px;
+  margin-bottom: 100px;
+
+  &:nth-of-type(3n) {
+    margin-right: 0;
+  }
+}
+
+.product__title {
+  margin-bottom: 19px;
+  color: #000;
+  text-align: center;
+  text-shadow: 0 1px 7.498px rgba(0, 0, 0, 0.25);
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.product__descr {
+  margin-bottom: 29px;
+  color: #000;
+  text-shadow: 0 0.586px 4.396px rgba(0, 0, 0, 0.25);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+}
+
+.product__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__weight {
+  color: #000;
+  text-shadow: 0 0.464px 3.48px rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+  font-size: 14.849px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.product__price {
+  border-radius: 25px;
+  background: #000;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 4.22px 10.127px 0px rgba(0, 0, 0, 0.13), 0px 18.566px 18.566px 0px rgba(0, 0, 0, 0.12), 0px 41.351px 25.317px 0px rgba(0, 0, 0, 0.07), 0px 74.263px 29.537px 0px rgba(0, 0, 0, 0.02), 0px 115.615px 32.068px 0px rgba(0, 0, 0, 0.00);
+  padding: 8px 16px;
+  box-sizing: border-box;
+  color: #EADBBE;
+  font-family: Poppins;
+  font-size: 26.08px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.basket {
+  width: 30px;
+  height: auto;
+
+  img {
+    width: 100%;
   }
 }

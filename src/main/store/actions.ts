@@ -10,7 +10,12 @@ export const saveRestaurantId = (id: number) => ({
   payload: {id},
 });
 
-export const saveCategories = (categories: number) => ({
+export const saveCategories = (categories: any) => ({
   type: actions.CATEGORIES,
   payload: {categories},
+});
+
+export const saveProducts = (products: any) => ({
+  type: actions.PRODUCTS,
+  payload: {products},
 });

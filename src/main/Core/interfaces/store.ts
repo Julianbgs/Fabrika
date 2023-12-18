@@ -5,6 +5,7 @@ export interface InitialStoreInterface {
     address: string;
     id: number;
     categories: any[];
+    products: any[];
 }
 
 export interface ActionWithPayload<T> extends Action {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './ChooseRestaurant.scss'
 import { useDispatch } from "react-redux";
 import { SelectOptionInterface } from "../../Core/interfaces/ui-elements";
-import {saveAddress, saveCategories} from "../../store/actions";
+import {saveAddress, saveCategories, saveRestaurantId} from "../../store/actions";
 import { useNavigate, useLocation } from "react-router-dom";
 import {apiDev} from "../../Core/environment/api";
 import axios from "axios";
@@ -26,6 +26,7 @@ export default function ChooseAddress(props: any) {
     const chooseAddress = (options: SelectOptionInterface, id: number) => {
         axios(`${apiDev}api/category?restaurantId=${id}`).then(res => {
             dispatch(saveCategories(res.data));
+            dispatch(saveRestaurantId(id));
         })
         dispatch(saveAddress(options.title, options.address));
         props.closeModal();

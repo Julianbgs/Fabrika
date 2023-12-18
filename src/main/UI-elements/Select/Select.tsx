@@ -4,7 +4,7 @@ import arr from '../../../assets/images/ui/select/arr.svg';
 import './Select.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
-import {saveAddress, saveCategories} from "../../store/actions";
+import {saveAddress, saveCategories, saveRestaurantId} from "../../store/actions";
 import axios from "axios";
 import {apiDev} from "../../Core/environment/api";
 
@@ -30,6 +30,7 @@ export default function Select(props: SelectInterface) {
     const getActiveOption = useCallback((option: SelectOptionInterface, id: number) => {
         axios(`${apiDev}api/category?restaurantId=${id}`).then(res => {
             dispatch(saveCategories(res.data));
+            dispatch(saveRestaurantId(id));
         })
         dispatch(saveAddress(option.title, option.address));
         setIsShowOptions(false);
