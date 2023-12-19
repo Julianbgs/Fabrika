@@ -45,8 +45,10 @@ export default function Products() {
                         <div className="product__image">
                             <img src={img} alt=""/>
                         </div>
+                        <div>
                        <div className="product__title">{product.name}</div>
                         <div className="product__descr">{product.description}</div>
+                        </div>
                         <div className="product__box">
                             <div className="product__weight">
                                 200гр
