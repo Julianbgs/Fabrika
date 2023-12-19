@@ -6,6 +6,7 @@ export interface InitialStoreInterface {
     id: number;
     categories: any[];
     products: any[];
+    count: number;
 }
 
 export interface ActionWithPayload<T> extends Action {

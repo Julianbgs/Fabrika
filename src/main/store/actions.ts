@@ -19,3 +19,8 @@ export const saveProducts = (products: any) => ({
   type: actions.PRODUCTS,
   payload: {products},
 });
+
+export const saveBasket = (count: number) => ({
+  type: actions.BASKET,
+  payload: {count},
+});

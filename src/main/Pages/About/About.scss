@@ -1,0 +1,28 @@
+.cart {
+  position: fixed;
+  bottom: 150px;
+  right: 40px;
+  width: 82px;
+  height: 82px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.count {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #000000;
+
+}

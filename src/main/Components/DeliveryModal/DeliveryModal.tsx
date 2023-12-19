@@ -4,23 +4,11 @@ import slideSecond from "../../../assets/images/slider/slide2.png";
 import './DeliveryModal.scss';
 import {useDispatch} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
-import {SelectOptionInterface} from "../../Core/interfaces/ui-elements";
-import {saveAddress} from "../../store/actions";
 
 export default function DeliveryModal(props: any) {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [previousPath, setPreviousPath] = useState<string | null>(null);
 
     const handleCloseModal = () => {
         props.closeModal();
-        if (previousPath) {
-            navigate(previousPath);
-        } else {
-            // Если previousPath не определен, вернуться на главную страницу
-            navigate('/');
-        }
     }
     return (
         <div className="slideD">

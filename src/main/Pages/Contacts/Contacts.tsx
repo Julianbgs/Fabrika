@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import Header from "../../Components/Header/Header";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {InitialStoreInterface} from "../../Core/interfaces/store";
 import Modal from 'react-modal';
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
@@ -10,6 +10,10 @@ import Footer from "../../Components/Footer/Footer";
 import Contacts from "../../Components/Contacts/Contacts";
 import DeliveryModal from "../../Components/DeliveryModal/DeliveryModal";
 import {useMediaQuery} from "react-responsive";
+import axios from "axios";
+import {apiDev} from "../../Core/environment/api";
+import {saveBasket} from "../../store/actions";
+import basket from "../../../assets/images/ui/basket.svg";
 
 
 const customStyles = {
@@ -74,15 +78,22 @@ const customStylesMobileD = {
     },
 };
 export default function ContactsPage() {
+    const dispatch = useDispatch();
+
+
     const isMobile = useMediaQuery({
         query: "(max-width: 786px)"
     });
     const isDesktop = useMediaQuery({
         query: "(min-width: 1200px)"
     });
+
     const initial: InitialStoreInterface = useSelector((state: any) => state);
     const address = initial ? initial.address : null;
     useEffect(() => {
+        axios(`${apiDev}api/basket`).then(res => {
+            dispatch(saveBasket(res.data.countOfItems));
+        })
         // callback function to call when event triggers
         if (!address) {
             openModal()
@@ -110,12 +121,6 @@ export default function ContactsPage() {
 
     function openModalD() {
         setIsOpenD(true);
-    }
-
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        return;
     }
 
     function closeModal() {
@@ -169,6 +174,12 @@ export default function ContactsPage() {
             <Header/>
             <div className="container-small">
                 <Contacts />
+            </div>
+            <div className="cart">
+                <div className="count">
+                    {initial.count}
+                </div>
+                <img src={basket} alt="basket img"/>
             </div>
             <Footer />
         </>
