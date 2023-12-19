@@ -6,7 +6,9 @@ import axios from "axios";
 import {apiDev} from "../../Core/environment/api";
 import {saveCategories, saveProducts} from "../../store/actions";
 
-import basket from '../../../assets/images/header/cart.svg'
+import basket from '../../../assets/images/header/cart.svg';
+import img from '../../../assets/images/about-us/grid2.png';
+
 
 export default function Products() {
     const dispatch = useDispatch();
@@ -40,6 +42,9 @@ export default function Products() {
             <div className="products__main">
                 {state.products && state.products.map((product) => {
                     return <div className="product" key={product.id}>
+                        <div className="product__image">
+                            <img src={img} alt=""/>
+                        </div>
                        <div className="product__title">{product.name}</div>
                         <div className="product__descr">{product.description}</div>
                         <div className="product__box">
