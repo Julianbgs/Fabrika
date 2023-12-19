@@ -11,6 +11,7 @@ import Modal from "react-modal";
 import Logo from '../../../assets/images/header/Logo.svg';
 import Cart from '../../../assets/images/header/cart.svg';
 import Burger from '../../../assets/images/header/burger.svg';
+import Subtract from '../../../assets/images/header/Subtract.svg';
 
 const customStylesD = {
     content: {
@@ -110,6 +111,9 @@ export default function Header() {
                         </div>
                     </div>}
                 </nav>
+                {isMobile && <div className="contact" onClick={() => openModal()}>
+                    <img src={Subtract} alt="contact btn"/>
+                </div>}
             </div>
         </div>
     )
