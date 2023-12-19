@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import slideSecond from "../../assets/images/slider/slide2.png";
+import slideSecond from "../../../assets/images/slider/slide2.png";
 
 import './DeliveryModal.scss';
 import {useDispatch} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
-import {SelectOptionInterface} from "../Core/interfaces/ui-elements";
-import {saveAddress} from "../store/actions";
+import {SelectOptionInterface} from "../../Core/interfaces/ui-elements";
+import {saveAddress} from "../../store/actions";
 
 export default function DeliveryModal(props: any) {
     const dispatch = useDispatch();

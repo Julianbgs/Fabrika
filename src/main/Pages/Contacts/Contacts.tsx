@@ -8,7 +8,7 @@ import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant"
 import './Contacts.scss';
 import Footer from "../../Components/Footer/Footer";
 import Contacts from "../../Components/Contacts/Contacts";
-import DeliveryModal from "../../DeliveryModal/DeliveryModal";
+import DeliveryModal from "../../Components/DeliveryModal/DeliveryModal";
 import {useMediaQuery} from "react-responsive";
 
 

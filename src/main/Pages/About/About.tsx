@@ -9,7 +9,7 @@ import './About.scss';
 import Footer from "../../Components/Footer/Footer";
 import AboutUs from "../../Components/About-us/About-us";
 import {useMediaQuery} from "react-responsive";
-import DeliveryModal from "../../DeliveryModal/DeliveryModal";
+import DeliveryModal from "../../Components/DeliveryModal/DeliveryModal";
 
 
 

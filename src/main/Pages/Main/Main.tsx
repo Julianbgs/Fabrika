@@ -8,7 +8,7 @@ import {AchievmentSlider} from "../../Components/AchieveSlider/AchieveSlider";
 
 import './Main.scss';
 import Footer from "../../Components/Footer/Footer";
-import DeliveryModal from "../../DeliveryModal/DeliveryModal";
+import DeliveryModal from "../../Components/DeliveryModal/DeliveryModal";
 import {useMediaQuery} from "react-responsive";
 import Products from "../../Components/Products/Products";
 
