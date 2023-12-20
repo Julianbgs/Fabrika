@@ -32,10 +32,10 @@ export default function reducer(state = initialStore, action: ActionWithPayload<
                 ...state,
                 count: action.payload.count,
             };
-        case actions.BASKET_BODY:
+        case actions.ITEMS:
             return {
                 ...state,
-                basket: action.payload.basket,
+                items: action.payload.items,
             };
         default:
             return state;
