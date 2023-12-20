@@ -73,3 +73,106 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+
+.sum {
+  margin-bottom: 100px;
+  text-align: right;
+  color: #000;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__align {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.form__title {
+  margin-bottom: 45px;
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.form__box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.form__input {
+  width: 460px;
+  margin-bottom: 31px;
+  padding: 11px 22px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid #B48A39;
+  background: transparent;
+  color: #000000;
+  font-family: Nunito,sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  &::placeholder {
+    color: #B48A39;
+  }
+}
+
+.radio__box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 31px;
+
+  label {
+    margin-left: 53px;
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+
+.form__center {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  margin-bottom: 156px;
+  padding: 31px 49px;
+  box-sizing: border-box;
+  border-radius: 36.652px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 6.109px 14.661px 0px rgba(0, 0, 0, 0.13), 0px 26.878px 26.878px 0px rgba(0, 0, 0, 0.12), 0px 59.865px 36.652px 0px rgba(0, 0, 0, 0.07), 0px 107.513px 42.761px 0px rgba(0, 0, 0, 0.02), 0px 167.378px 46.426px 0px rgba(0, 0, 0, 0.00);
+  color: #EADBBE;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
