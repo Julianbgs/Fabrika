@@ -13,7 +13,7 @@ import {useMediaQuery} from "react-responsive";
 import Products from "../../Components/Products/Products";
 import axios from "axios";
 import {apiDev} from "../../Core/environment/api";
-import {saveBasket, saveCategories, saveRestaurantId} from "../../store/actions";
+import {saveBasket, saveBasketBody, saveCategories, saveRestaurantId} from "../../store/actions";
 
 import cart from "../../../assets/images/ui/basket.svg";
 import basket from "../../../assets/images/ui/basket.svg";
@@ -116,6 +116,7 @@ export default function Main() {
         axios(`${apiDev}api/basket`).then(res => {
             console.log(res.data.countOfItems);
             dispatch(saveBasket(res.data.countOfItems));
+            dispatch(saveBasketBody(res.data.basketItems));
         })
     }
 

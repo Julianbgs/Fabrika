@@ -24,3 +24,8 @@ export const saveBasket = (count: number) => ({
   type: actions.BASKET,
   payload: {count},
 });
+
+export const saveBasketBody = (obj: any) => ({
+  type: actions.BASKET_BODY,
+  payload: {obj},
+});

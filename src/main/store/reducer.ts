@@ -32,6 +32,11 @@ export default function reducer(state = initialStore, action: ActionWithPayload<
                 ...state,
                 count: action.payload.count,
             };
+        case actions.BASKET_BODY:
+            return {
+                ...state,
+                basket: action.payload.basket,
+            };
         default:
             return state;
     }
