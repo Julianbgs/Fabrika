@@ -58,6 +58,7 @@ export default function Header() {
     });
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
+
     function openModal() {
         setIsOpen(true);
     }
@@ -74,8 +75,8 @@ export default function Header() {
                 contentLabel="Mobile Menu"
                 style={customStylesMobileD}
             >
-                <MenuModal />
-            </Modal> }
+                <MenuModal/>
+            </Modal>}
             <div className="header">
                 {isMobile && <div className="burger" onClick={() => openModal()}>
                     <img src={Burger} alt="burger btn"/>
@@ -90,7 +91,7 @@ export default function Header() {
                                 </StyledLink>
                             </li>
                         </ul>
-                    </div> }
+                    </div>}
                     <div className="header__logo">
                         <img src={Logo} alt="Logo site"/>
                     </div>
@@ -106,9 +107,11 @@ export default function Header() {
                                 </StyledLink>
                             </li>
                         </ul>
-                        <div className='header__cart'>
-                            <img src={Cart} alt="cart site"/>
-                        </div>
+                        <StyledLink to={'/basket'}>
+                            <div className='header__cart'>
+                                <img src={Cart} alt="cart site"/>
+                            </div>
+                        </StyledLink>
                     </div>}
                 </nav>
                 {isMobile && <div className="contact" onClick={() => openModal()}>

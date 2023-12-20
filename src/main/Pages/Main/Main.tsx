@@ -17,6 +17,7 @@ import {saveBasket, saveCategories, saveItems, saveRestaurantId} from "../../sto
 
 import cart from "../../../assets/images/ui/basket.svg";
 import basket from "../../../assets/images/ui/basket.svg";
+import StyledLink from "../../StyledComponents/Link/Link";
 
 const customStyles = {
     content: {
@@ -159,7 +160,7 @@ export default function Main() {
                 <DeliveryModal closeModal={closeModal}/>
             </Modal>
             }
-            { isDesktop && <div className="delivery" onClick={() => openModalD()}>
+            {isDesktop && <div className="delivery" onClick={() => openModalD()}>
                 Доставка
             </div>}
             {isMobile && <Modal
@@ -183,15 +184,17 @@ export default function Main() {
             <Header/>
             <AchievmentSlider/>
             <div className="container-small">
-            <Products />
+                <Products/>
             </div>
-            <div className="cart">
-                <div className="count">
-                    {initial.count}
+            <StyledLink to={'/basket'}>
+                <div className="cart">
+                    <div className="count">
+                        {initial.count}
+                    </div>
+                    <img src={basket} alt="basket img"/>
                 </div>
-                <img src={basket} alt="basket img"/>
-            </div>
-            <Footer />
+            </StyledLink>
+            <Footer/>
         </>
     )
 }

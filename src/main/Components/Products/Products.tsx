@@ -15,8 +15,6 @@ export default function Products() {
     const dispatch = useDispatch();
     const state: InitialStoreInterface = useSelector((state: any) => state);
 
-    // Use an object to manage the showCartOpt state for each product
-
     useEffect(() => {
         chooseProduct(1);
     }, [state.id]);

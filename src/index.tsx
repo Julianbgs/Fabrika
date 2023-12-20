@@ -9,6 +9,7 @@ import {Provider} from "react-redux";
 import store from "./main/store/store";
 import About from "./main/Pages/About/About";
 import ContactsPage from "./main/Pages/Contacts/Contacts";
+import Basket from "./main/Pages/Basket/Basket";
 
 const routes = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const routes = createBrowserRouter([
     {
         path: '/contacts',
         element: <ContactsPage/>
+    },
+    {
+        path: '/basket',
+        element: <Basket/>
     }
 ])
 
