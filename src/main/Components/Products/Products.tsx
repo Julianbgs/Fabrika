@@ -73,7 +73,7 @@ export default function Products() {
                     return (
                         <div className="product" key={product.id}>
                             <div className="product__image">
-                                <img src={img} alt="" />
+                                <img src={product.pictureUrls.length > 0 ? product?.pictureUrls[0] : img} alt="" />
                             </div>
                             <div>
                                 <div className="product__title">{product.name}</div>
