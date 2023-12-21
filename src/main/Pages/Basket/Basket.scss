@@ -193,8 +193,7 @@
   margin-bottom: 31px;
 
   label {
-    margin-left: 53px;
-    color: #000;
+    color: #000000;
     font-family: Inter, sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -228,4 +227,9 @@
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width: 786px) {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
 }
