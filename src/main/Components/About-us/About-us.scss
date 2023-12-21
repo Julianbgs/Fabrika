@@ -36,7 +36,7 @@
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 
@@ -51,7 +51,7 @@
   text-align: left;
 
   @media (max-width: 768px) {
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
   }
 }
@@ -66,6 +66,7 @@
   line-height: 28px;
 
   @media (max-width: 768px) {
+    font-size: 18px;
     width: 100%;
     margin-bottom: 20px;
     text-align: center;
@@ -105,6 +106,10 @@
   line-height: normal;
   text-transform: uppercase;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .price__border-description {
@@ -115,6 +120,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .price__thin {
@@ -126,6 +135,11 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
+
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .difference {
@@ -148,6 +162,7 @@
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
+    font-size: 20px;
   }
 }
 
@@ -210,7 +225,7 @@
   line-height: normal;
 
   @media (max-width: 768px) {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 
@@ -226,7 +241,7 @@
 
   @media (max-width: 768px) {
     margin-bottom: 40px;
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 
@@ -239,7 +254,7 @@
   line-height: normal;
 
   @media (max-width: 768px) {
-    font-size: 21px;
+    font-size: 20px;
     text-align: center;
   }
 }
@@ -252,6 +267,10 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 img {
