@@ -16,6 +16,7 @@ import {Field, Formik} from "formik";
 import Modal from "react-modal";
 import ChooseAddress from "../../Components/ChooseAddressModal/ChooseRestaurant";
 import {useMediaQuery} from "react-responsive";
+import {useNavigate} from "react-router";
 
 
 const customStyles = {
@@ -52,6 +53,7 @@ const customStylesMobile = {
 
 export default function Basket() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const isMobile = useMediaQuery({
         query: "(max-width: 786px)"
@@ -122,7 +124,7 @@ export default function Basket() {
     }
 
     return (
-        <>
+        <div className={isDesktop && state?.items && state?.items.length === 0 ? 'wrapper' : ''}>
             {isMobile && <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -183,7 +185,7 @@ export default function Basket() {
                     {state?.items && state.items.length === 0 && <div className="empty">
                         Корзина пуста
                     </div>}
-                    <Formik
+                    {state?.items && state.items.length > 0 && <Formik
                         initialValues={{ email: '', name: '', number: '', address: '', picked: ''}}
                         // validate={values => {
                         //     const errors = {
@@ -221,6 +223,7 @@ export default function Basket() {
                                     paymentMethod: +values.picked,
                                     restaurantId: state.id
                                 }, {withCredentials: true})
+                                navigate('/offer-done');
                                 setSubmitting(false);
                             }, 400);
                         }}
@@ -295,10 +298,10 @@ export default function Basket() {
                                 </div>
                             </form>
                         )}
-                    </Formik>
+                    </Formik>}
                 </section>
             </div>
             <Footer/>
-        </>
+        </div>
     )
 }

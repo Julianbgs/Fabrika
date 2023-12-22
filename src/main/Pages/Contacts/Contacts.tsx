@@ -12,8 +12,9 @@ import DeliveryModal from "../../Components/DeliveryModal/DeliveryModal";
 import {useMediaQuery} from "react-responsive";
 import axios from "axios";
 import {apiDev} from "../../Core/environment/api";
-import {saveBasket} from "../../store/actions";
+import {saveBasket, saveItems} from "../../store/actions";
 import basket from "../../../assets/images/ui/basket.svg";
+import StyledLink from "../../StyledComponents/Link/Link";
 
 
 const customStyles = {
@@ -91,9 +92,7 @@ export default function ContactsPage() {
     const initial: InitialStoreInterface = useSelector((state: any) => state);
     const address = initial ? initial.address : null;
     useEffect(() => {
-        axios(`${apiDev}api/basket`).then(res => {
-            dispatch(saveBasket(res.data.countOfItems));
-        })
+        getBasket();
         // callback function to call when event triggers
         if (!address) {
             openModal()
@@ -111,6 +110,14 @@ export default function ContactsPage() {
         //     return () => window.removeEventListener('load', onPageLoad);
         // }
     }, []);
+
+    function getBasket() {
+        axios(`${apiDev}api/basket`, {withCredentials: true}).then(res => {
+            console.log(res.data.countOfItems);
+            dispatch(saveBasket(res.data.countOfItems));
+            dispatch(saveItems(res.data.basketItems));
+        })
+    }
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalIsOpenD, setIsOpenD] = React.useState(false);
@@ -175,12 +182,14 @@ export default function ContactsPage() {
             <div className="container-small">
                 <Contacts />
             </div>
-            <div className="cart">
-                <div className="count">
-                    {initial.count}
+            <StyledLink to={'/basket'}>
+                <div className="cart">
+                    <div className="count">
+                        {initial.count}
+                    </div>
+                    <img src={basket} alt="basket img"/>
                 </div>
-                <img src={basket} alt="basket img"/>
-            </div>
+            </StyledLink>
             <Footer />
         </>
     )

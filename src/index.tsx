@@ -10,6 +10,7 @@ import store from "./main/store/store";
 import About from "./main/Pages/About/About";
 import ContactsPage from "./main/Pages/Contacts/Contacts";
 import Basket from "./main/Pages/Basket/Basket";
+import Done from "./main/Pages/DoneOffer/Done";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
     {
         path: '/basket',
         element: <Basket/>
+    },
+    {
+        path: '/offer-done',
+        element: <Done/>
     }
 ])
 
