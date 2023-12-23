@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+
+  @media (max-width: 786px) {
+    height: 100%;
+  }
 }
 
 .cart-main {
