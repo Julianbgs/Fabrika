@@ -152,7 +152,7 @@ export default function Basket() {
                             {state?.items && state?.items.map(item => {
                                 return <div className="cart-main__item">
                                     <div className="cart-main-img">
-                                        <img src={img} alt="cart img"/>
+                                        <img src={item.pictures.length > 0 ? item.pictures[0] : img} alt="cart img"/>
                                     </div>
                                     <div className="cart__box">
                                         <div className="cart__title">
