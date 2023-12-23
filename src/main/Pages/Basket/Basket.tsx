@@ -172,7 +172,7 @@ export default function Basket() {
                                         </div>
                                     </div>
                                     <div className="cart-main__price">
-                                        {item.unitPrice * (item?.quantity ? item?.quantity : 1)}₽
+                                        {parseFloat((item.unitPrice * (item?.quantity ? item?.quantity : 1)).toString())}₽
                                     </div>
                                 </div>
                             })}
