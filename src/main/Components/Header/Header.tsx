@@ -114,8 +114,10 @@ export default function Header() {
                         </StyledLink>
                     </div>}
                 </nav>
-                {isMobile && <div className="contact" onClick={() => openModal()}>
-                    <img src={Subtract} alt="contact btn"/>
+                {isMobile && <div className="contact" >
+                    <a href="tel:+79186400250 ">
+                        <img src={Subtract} alt="contact btn"/>
+                    </a>
                 </div>}
             </div>
         </div>

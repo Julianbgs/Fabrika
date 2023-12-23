@@ -185,7 +185,7 @@ export default function Basket() {
                     {state?.items && state.items.length === 0 && <div className="empty">
                         Корзина пуста
                     </div>}
-                    {state?.items && state.items.length > 0 && <Formik
+                    { state?.items && state.items.length > 0 && <Formik
                         initialValues={{ email: '', name: '', number: '', address: '', picked: ''}}
                         // validate={values => {
                         //     const errors = {

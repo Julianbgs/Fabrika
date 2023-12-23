@@ -99,7 +99,7 @@ export default function Done() {
     }
 
     return (
-        <div className="wrapper">
+        <div className={isDesktop && state?.items && state?.items.length === 0 ? 'wrapper' : ''}>
             <Header/>
             <div className="empty">
                 Заказ успешно создан!

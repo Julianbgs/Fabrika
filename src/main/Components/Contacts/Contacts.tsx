@@ -28,20 +28,20 @@ export default function Contacts() {
                     </div>
                     <div className="contacts__item">
                         <div className="contacts__box-title">
-                            Бронь столов, доставка с Первомайской 39
+                            Бронь столов, доставка переулка с Кордонного 1И
                         </div>
                         <div className="contacts__box-number">
-                            8 (928) 841-11-71
+                            8 (938) 557-70-30
                         </div>
                     </div>
                 </div>
                 <div className="contacts__box contacts__box--center">
                     <div className="contacts__item">
                         <div className="contacts__box-title">
-                            Бронь столов, доставка с Первомайской 39
+                            По брони банкетного зала и организации мероприятия:
                         </div>
                         <div className="contacts__box-number">
-                            8 (928) 841-11-71
+                            8 (918) 640-02-50
                         </div>
                     </div>
                 </div>

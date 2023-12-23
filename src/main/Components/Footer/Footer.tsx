@@ -78,7 +78,9 @@ export default function Footer() {
                                 Первомайская 39
                             </div>
                             <div className="footer__number">
-                                8 (928) 841-11-71
+                                <a href="tel:+7928841171">
+                                    8 (928) 841-11-71
+                                </a>
                             </div>
                         </div>
                         <div className="footer__contact">
@@ -86,7 +88,9 @@ export default function Footer() {
                                 Переулок Кордонный 1И
                             </div>
                             <div className="footer__number">
-                                8 (938) 557-70-30
+                                <a href="tel:+79385577030">
+                                    8 (938) 557-70-30
+                                </a>
                             </div>
                         </div>
                     </div>
