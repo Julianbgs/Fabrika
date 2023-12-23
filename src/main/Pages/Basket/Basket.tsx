@@ -101,7 +101,7 @@ export default function Basket() {
         state.items.forEach(item => {
             sum = sum + (item.unitPrice * item.quantity);
         })
-        return sum;
+        return +sum.toFixed(2);
     }
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
