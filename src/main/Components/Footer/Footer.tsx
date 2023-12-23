@@ -30,7 +30,7 @@ export default function Footer() {
                         Меню
                     </button>
                 </StyledLink>
-                <StyledLink to={'/'}>
+                <StyledLink to={'/basket'}>
                     <button className="footer__btn mr-0">
                         Корзина
                     </button>
