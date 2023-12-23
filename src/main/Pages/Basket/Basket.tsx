@@ -260,13 +260,6 @@ export default function Basket() {
                                                onChange={handleChange}
                                                onBlur={handleBlur}
                                                value={values.address}/>
-                                        <input placeholder="Email"
-                                               className="form__input"
-                                               type="email"
-                                               name="email"
-                                               onChange={handleChange}
-                                               onBlur={handleBlur}
-                                               value={values.email}/>
                                     </div>
                                     <div className="form__box">
                                         <div className="form__title">
