@@ -220,6 +220,7 @@ export default function Basket() {
                                         street: values.address,
                                     },
                                     phoneNumber: values.number,
+                                    customerName: values.name,
                                     paymentMethod: +values.picked,
                                     restaurantId: state.id
                                 }, {withCredentials: true})
