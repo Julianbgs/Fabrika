@@ -123,6 +123,14 @@ export default function Basket() {
         setIsOpenD(false);
     }
 
+    function isEmptyFieldPhone(value: string) {
+        let error;
+        if (!value) {
+            error = 'Поле обязательно';
+        }
+        return error;
+    }
+
     return (
         <div className={isDesktop && state?.items && state?.items.length === 0 ? 'wrapper' : ''}>
             {isMobile && <Modal
@@ -251,6 +259,7 @@ export default function Basket() {
                                                onBlur={handleBlur}
                                                value={values.name}
                                         />
+                                        {values.number === '' && <p className="red">Поле обязательно</p>}
                                         <input placeholder="+7 (" className="form__input" type="text"
                                                name="number"
                                                onChange={handleChange}
@@ -288,6 +297,7 @@ export default function Basket() {
                                         type="submit"
                                         className="submit"
                                         value="Оформить заказ"
+                                        disabled={values.number === ''}
                                     />
                                 </div>
                             </form>

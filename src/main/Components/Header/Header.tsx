@@ -12,6 +12,8 @@ import Logo from '../../../assets/images/header/Logo.svg';
 import Cart from '../../../assets/images/header/cart.svg';
 import Burger from '../../../assets/images/header/burger.svg';
 import Subtract from '../../../assets/images/header/Subtract.svg';
+import {InitialStoreInterface} from "../../Core/interfaces/store";
+import {useSelector} from "react-redux";
 
 const customStylesD = {
     content: {
@@ -44,6 +46,9 @@ const customStylesMobileD = {
 };
 
 export default function Header() {
+    const initial: InitialStoreInterface = useSelector((state: any) => state);
+    const address = initial ? initial.address : null;
+
     const options = [
         {title: 'Анапа', address: 'Кордонный переулок 1И'},
         {title: 'Анапа', address: 'Первомайская 39'},
@@ -93,7 +98,9 @@ export default function Header() {
                         </ul>
                     </div>}
                     <div className="header__logo">
-                        <img src={Logo} alt="Logo site"/>
+                        <StyledLink to={'/'}>
+                            <img src={Logo} alt="Logo site"/>
+                        </StyledLink>
                     </div>
                     {isMobile && <Select options={options}/>}
                     {isDesktop && <div className="header__box">
@@ -115,9 +122,12 @@ export default function Header() {
                     </div>}
                 </nav>
                 {isMobile && <div className="contact" >
-                    <a href="tel:+79186400250 ">
+                    {address === 'Первомайская 39' && <a href="tel:+79288411171">
                         <img src={Subtract} alt="contact btn"/>
-                    </a>
+                    </a>}
+                    {address === 'Кордонный переулок 1И' && <a href="tel:+79385577030">
+                        <img src={Subtract} alt="contact btn"/>
+                    </a>}
                 </div>}
             </div>
         </div>
